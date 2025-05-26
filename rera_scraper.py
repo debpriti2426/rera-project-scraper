@@ -9,7 +9,7 @@ import time
 
 # Setup Chrome browser
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Run in background
+options.add_argument('--headless') # comment out this line to run in background
 options.add_argument('--disable-gpu')
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
