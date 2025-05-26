@@ -16,6 +16,9 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 url = "https://rera.odisha.gov.in/projects/project-list"
 driver.get(url)
 wait = WebDriverWait(driver, 20)
+
+# Wait until at least one project card is loaded
+wait.until(EC.presence_of_element_locate d((By.CLASS_NAME, "project_card")))
 # Scroll to load dynamic content
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 time.sleep(2)
